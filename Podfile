@@ -5,4 +5,8 @@ target 'SocialNetwork' do
   pod 'Firebase/Core'
   pod ‘Firebase/Database’
   pod ‘Firebase/Storage’
+  pod 'FBSDKLoginKit'
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKShareKit'
+
 end

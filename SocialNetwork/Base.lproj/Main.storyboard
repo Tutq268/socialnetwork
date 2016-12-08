@@ -73,6 +73,9 @@
                                     <constraint firstAttribute="width" secondItem="grV-Hf-GnK" secondAttribute="height" multiplier="1:1" id="rcm-5W-eop"/>
                                 </constraints>
                                 <state key="normal" image="f"/>
+                                <connections>
+                                    <action selector="abtnLoginFB:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sf8-Tk-M6Q"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="C1j-sG-xBv">
                                 <rect key="frame" x="36" y="415.5" width="303" height="148"/>
@@ -94,6 +97,9 @@
                                         <color key="backgroundColor" red="0.8666666666666667" green="0.17254901960784313" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="Sign In"/>
+                                        <connections>
+                                            <action selector="abtnLoginEmail:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MuR-c4-Y3O"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -120,6 +126,10 @@
                             <constraint firstItem="grV-Hf-GnK" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1/4" id="yQM-5A-NDb"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="txtEmail" destination="mHO-Do-DCB" id="tl8-C7-ZS1"/>
+                        <outlet property="txtPassword" destination="RVF-Ri-jcN" id="s9N-Ie-QpS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
