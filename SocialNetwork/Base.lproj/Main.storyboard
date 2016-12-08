@@ -129,11 +129,47 @@
                     <connections>
                         <outlet property="txtEmail" destination="mHO-Do-DCB" id="tl8-C7-ZS1"/>
                         <outlet property="txtPassword" destination="RVF-Ri-jcN" id="s9N-Ie-QpS"/>
+                        <segue destination="iPm-kW-5wo" kind="show" identifier="seque" id="VDq-02-lTc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-63.768115942028992" y="-91.304347826086968"/>
+        </scene>
+        <!--FeedVC-->
+        <scene sceneID="hgJ-Df-gKq">
+            <objects>
+                <viewController id="iPm-kW-5wo" customClass="FeedVC" customModule="SocialNetwork" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sSO-Cf-ZcQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="MJc-Bv-xFD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tpB-L1-hav">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpy-9l-LUm">
+                                <rect key="frame" x="157" y="303" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="PFg-2G-sot"/>
+                                    <constraint firstAttribute="width" constant="60" id="YBd-Ix-JxM"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="abtnLogout:" destination="iPm-kW-5wo" eventType="touchUpInside" id="1AJ-rT-W8m"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.79510480165481567" green="0.31571390842513214" blue="0.19357187966739756" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jpy-9l-LUm" firstAttribute="centerX" secondItem="tpB-L1-hav" secondAttribute="centerX" id="8Ln-oe-EvO"/>
+                            <constraint firstItem="jpy-9l-LUm" firstAttribute="centerY" secondItem="tpB-L1-hav" secondAttribute="centerY" id="O3U-Sa-gdn"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eT0-BH-740" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="859" y="-98"/>
         </scene>
     </scenes>
     <resources>

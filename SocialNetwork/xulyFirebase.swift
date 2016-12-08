@@ -15,21 +15,22 @@ import FirebaseAuth
             if error == nil
             {
             print("Dang Nhap Thanh Cong")
-                completion(error?.localizedDescription,user?.uid)
+                completion(user?.uid,error?.localizedDescription)
             }
             else{
+               
                 FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: {
                     (users, error) in
                     if error != nil
                     {
-                        completion(error?.localizedDescription,users?.uid)
+                        completion(users?.uid,error?.localizedDescription)
                     }
                     else {
                         users?.sendEmailVerification(completion: {
                             (error) in
                             print(error?.localizedDescription)
                         })
-                        completion("moi ban check mail",users?.uid)
+                        completion(users?.uid,"moi ban check mail")
                     }
                 })
             }

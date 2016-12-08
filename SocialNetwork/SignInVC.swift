@@ -10,6 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Firebase
+import SwiftKeychainWrapper
 class SignInVC: UIViewController {
 
     @IBOutlet weak var txtPassword: UITextField!
@@ -18,7 +19,12 @@ class SignInVC: UIViewController {
         super.viewDidLoad()
         txtPassword.isSecureTextEntry = true
     }
-
+    override func viewDidAppear(_ animated: Bool) {
+        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID)
+        {
+            performSegue(withIdentifier: "seque", sender: nil)
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -51,16 +57,25 @@ class SignInVC: UIViewController {
             else
             {
             print("Tu Tran: Successfully authenticated with firebase")
+                if let user = user
+                {
+                 self.completeSignIn(id: user.uid)
+                }
             }
         })
     }
     @IBAction func abtnLoginEmail(_ sender: UIButton) {
         registerWithEmail(email: txtEmail.text!, password: txtPassword.text!, completion: {
         (users, error) in
-            print(error,users)
+            if let user = users{
+            self.completeSignIn(id: user)
+            }
         })
     }
+    func completeSignIn(id: String){
+        KeychainWrapper.standard.set(id, forKey: KEY_UID)
+        performSegue(withIdentifier: "seque", sender: nil)
 
-
+    }
 }
 
