@@ -14,7 +14,7 @@ class CircleView: UIButton {
         layer.shadowOpacity = 0.8
         layer.shadowRadius = 5.0
         layer.shadowOffset = CGSize(width: 3.0, height: 3.0)
-        self.clipsToBounds = false
+        clipsToBounds = true
     }
     override func layoutSubviews() {
         super.layoutSubviews()

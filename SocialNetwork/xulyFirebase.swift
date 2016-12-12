@@ -8,14 +8,14 @@
 
 import UIKit
 import FirebaseAuth
-    func registerWithEmail(email: String,password: String, completion: @escaping (_ error:String?,_ uid:String?)->())
+    func registerWithEmail(email: String,password: String, completion: @escaping (_ uid:FIRUser?,_ error:String?)->())
     {
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: {
         (user, error) in
             if error == nil
             {
             print("Dang Nhap Thanh Cong")
-                completion(user?.uid,error?.localizedDescription)
+                completion(user,error?.localizedDescription)
             }
             else{
                
@@ -23,14 +23,14 @@ import FirebaseAuth
                     (users, error) in
                     if error != nil
                     {
-                        completion(users?.uid,error?.localizedDescription)
+                        completion(users,error?.localizedDescription)
                     }
                     else {
                         users?.sendEmailVerification(completion: {
                             (error) in
                             print(error?.localizedDescription)
                         })
-                        completion(users?.uid,"moi ban check mail")
+                        completion(users,"moi ban check mail")
                     }
                 })
             }

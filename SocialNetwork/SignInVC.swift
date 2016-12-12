@@ -10,6 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Firebase
+import FirebaseAuth
 import SwiftKeychainWrapper
 class SignInVC: UIViewController {
 
@@ -59,7 +60,8 @@ class SignInVC: UIViewController {
             print("Tu Tran: Successfully authenticated with firebase")
                 if let user = user
                 {
-                 self.completeSignIn(id: user.uid)
+                    let userData = ["provider": credential.provider]
+                 self.completeSignIn(id: user.uid, userData: userData)
                 }
             }
         })
@@ -68,11 +70,13 @@ class SignInVC: UIViewController {
         registerWithEmail(email: txtEmail.text!, password: txtPassword.text!, completion: {
         (users, error) in
             if let user = users{
-            self.completeSignIn(id: user)
+                let userData = ["provider": users?.providerID]
+                self.completeSignIn(id: user.uid, userData: userData as! Dictionary<String, String>)
             }
         })
     }
-    func completeSignIn(id: String){
+    func completeSignIn(id: String, userData: Dictionary<String,String>){
+        DataService.ds.createFirebaseDBUser(uid: id, userData: userData)
         KeychainWrapper.standard.set(id, forKey: KEY_UID)
         performSegue(withIdentifier: "seque", sender: nil)
 
