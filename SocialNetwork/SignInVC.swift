@@ -76,7 +76,7 @@ class SignInVC: UIViewController {
         })
     }
     func completeSignIn(id: String, userData: Dictionary<String,String>){
-        DataService.ds.createFirebaseDBUser(uid: id, userData: userData)
+        DataService.ds.CreateDatabaseBDUser(uid: id, dataService: userData)
         KeychainWrapper.standard.set(id, forKey: KEY_UID)
         performSegue(withIdentifier: "seque", sender: nil)
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F31C81E1E02341800FF7BFA /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31C81D1E02341800FF7BFA /* Post.swift */; };
 		4F5F0C5F1DF79A5200A963D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5F0C5E1DF79A5200A963D1 /* AppDelegate.swift */; };
 		4F5F0C611DF79A5200A963D1 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5F0C601DF79A5200A963D1 /* SignInVC.swift */; };
 		4F5F0C641DF79A5200A963D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F5F0C621DF79A5200A963D1 /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		4382467CC1DD1A605E2043E3 /* Pods-SocialNetwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialNetwork.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialNetwork/Pods-SocialNetwork.release.xcconfig"; sourceTree = "<group>"; };
+		4F31C81D1E02341800FF7BFA /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		4F5F0C5B1DF79A5200A963D1 /* SocialNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F5F0C5E1DF79A5200A963D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F5F0C601DF79A5200A963D1 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 		4F5F0C721DF79BE800A963D1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4F31C81D1E02341800FF7BFA /* Post.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				4F9F26641DF8D5B90024B4FB /* xulyFirebase.swift in Sources */,
 				4F5F0C7D1DF7BBE500A963D1 /* FancyField.swift in Sources */,
 				4FA053FB1DFEEDA800C99F4B /* DataService.swift in Sources */,
+				4F31C81E1E02341800FF7BFA /* Post.swift in Sources */,
 				4FFB8B541DFA4E6F000FEFC2 /* CellFeed.swift in Sources */,
 				4F5F0C611DF79A5200A963D1 /* SignInVC.swift in Sources */,
 				4F5F0C7B1DF7BA2D00A963D1 /* RoundBtn.swift in Sources */,

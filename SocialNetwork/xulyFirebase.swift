@@ -28,7 +28,6 @@ import FirebaseAuth
                     else {
                         users?.sendEmailVerification(completion: {
                             (error) in
-                            print(error?.localizedDescription)
                         })
                         completion(users,"moi ban check mail")
                     }

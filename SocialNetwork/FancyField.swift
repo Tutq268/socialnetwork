@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FancyField: UITextField {
+class FancyField: UITextField,UITextFieldDelegate {
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -16,6 +16,7 @@ class FancyField: UITextField {
         layer.borderWidth = 1.0
         layer.cornerRadius = 2.0
         self.clipsToBounds = false
+        self.delegate = self
     }
     override func textRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.insetBy(dx: 10, dy: 5)
@@ -23,5 +24,8 @@ class FancyField: UITextField {
     override func editingRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.insetBy(dx: 10, dy: 5)
     }
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.resignFirstResponder()
+        return true
+    }
 }
